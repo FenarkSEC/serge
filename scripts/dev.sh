@@ -9,11 +9,7 @@ mongod &
 cd web && npm run dev -- --host 0.0.0.0 --port 8008 &
   
 # Start the API
-<<<<<<< HEAD:deploy.sh
-cd api && uvicorn main:app --host 0.0.0.0 --port 9124 --root-path /api/ &
-=======
 cd api && uvicorn src.serge.main:api_app --reload --host 0.0.0.0 --port 9124 --root-path /api/ &
->>>>>>> b5c423fe590d10bd4cfa0ce7a07933ac4bd2b788:scripts/dev.sh
 
 # Wait for any process to exit
 wait -n

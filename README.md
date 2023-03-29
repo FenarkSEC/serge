@@ -32,10 +32,13 @@ Make sure you have docker desktop installed, WSL2 configured and enough free RAM
 #### Kubernetes
 
 Setting up Serge on Kubernetes can be found in the wiki: https://github.com/nsarrazin/serge/wiki/Integrating-Serge-in-your-orchestration#kubernetes-example
+<<<<<<< HEAD
 
 #### Kubernetes
 
 Setting up Serge on Kubernetes can be found in the wiki: https://github.com/nsarrazin/serge/wiki/Integrating-Serge-in-your-orchestration#kubernetes-example
+=======
+>>>>>>> b5c423fe590d10bd4cfa0ce7a07933ac4bd2b788
 
 ### Using serge
 
