@@ -4,10 +4,11 @@ from beanie import init_beanie, Document
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseSettings
 
-from models import Question, Chat, ChatParameters
+from serge.models.chat import Question, Chat, ChatParameters
 
 
 class Settings(BaseSettings):
+    NODE_ENV: str = "development"
     class Config:
         orm_mode = True
 

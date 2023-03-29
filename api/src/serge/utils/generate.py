@@ -1,5 +1,5 @@
 import subprocess, os
-from models import Chat, ChatParameters
+from serge.models.chat import Chat, ChatParameters
 import asyncio
 import logging
 
@@ -16,7 +16,7 @@ async def generate(
     args = (
         "llama",
         "--model",
-        "/usr/src/app/weights/" + params.model,
+        "/usr/src/app/weights/" + params.model + ".bin",
         "--prompt",
         prompt,
         "--n_predict",
@@ -53,7 +53,7 @@ async def generate(
             if return_code != 0:
                 error_output = await procLlama.stderr.read()
                 logger.error(error_output.decode("utf-8"))
-                raise ValueError(error_output.decode("utf-8"))
+                raise ValueError(f"RETURN CODE {return_code}\n\n"+error_output.decode("utf-8"))
             else:
                 return
 

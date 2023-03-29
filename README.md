@@ -14,20 +14,24 @@ A chat interface based on `llama.cpp` for running Alpaca models. Entirely self-h
 ## Getting started
 
 Setting up Serge is very easy. TLDR for running it with Alpaca 7B:
+
 ```
 git clone https://github.com/nsarrazin/serge.git
 cd serge
 
-docker compose up -d
+docker compose up --build -d
 docker compose exec serge python3 /usr/src/app/api/utils/download.py tokenizer 7B
 ```
 
 #### Windows
 
-:warning: For cloning on windows, use `git clone https://github.com/nsarrazin/serge.git --config core.autocrlf=input`.  
+:warning: For cloning on windows, use `git clone https://github.com/nsarrazin/serge.git --config core.autocrlf=input`.
 
 Make sure you have docker desktop installed, WSL2 configured and enough free RAM to run models. (see below)
 
+#### Kubernetes
+
+Setting up Serge on Kubernetes can be found in the wiki: https://github.com/nsarrazin/serge/wiki/Integrating-Serge-in-your-orchestration#kubernetes-example
 
 #### Kubernetes
 
@@ -58,6 +62,16 @@ llama will just crash if you don't have enough available memory for your model.
 ## Support
 
 Feel free to join the discord if you need help with the setup: https://discord.gg/62Hc6FEYQH
+
+## Contributing
+
+Serge is always open for contributions! If you catch a bug or have a feature idea, feel free to open an issue or a PR.
+
+If you want to run Serge in development mode (with hot-module reloading for svelte & autoreload for FastAPI) you can do so like this:
+
+```
+docker compose -f docker-compose.dev.yml up -d --build
+```
 
 ## What's next
 
